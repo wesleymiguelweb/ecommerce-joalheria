@@ -1,0 +1,37 @@
+/* css/atomic/templates/_auth-layout.css */
+.auth-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+.auth-form {
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+.auth-form h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.auth-form .input-field {
+  margin-bottom: var(--space-md);
+  text-align: center; /* Fiel à imagem */
+}
+.auth-form .auth-link {
+  display: block;
+  margin: 20px 0;
+  font-size: 16px;
+}
+.auth-form .auth-link a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.auth-form .forgot-password {
+  color: var(--color-link-red);
+  text-decoration: underline;
+}
+.auth-form .btn {
+  width: 100%;
+}

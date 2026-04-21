@@ -1,0 +1,368 @@
+/* css/atomic/organisms/_cart.css */
+
+/* --- Layout Geral da Página do Carrinho --- */
+.cart-layout {
+  display: grid;
+  /* Ajuste: Talvez um pouco menos espaço para o resumo seja melhor? 1.5fr ou 1fr */
+  grid-template-columns: 2fr 1fr; 
+  gap: 40px;
+  align-items: flex-start; /* Alinha o topo do resumo com o topo da lista */
+  margin-top: var(--space-lg); /* Adiciona espaço acima */
+  margin-bottom: var(--space-xl); /* Adiciona espaço abaixo */
+}
+
+/* --- Lista de Itens do Carrinho --- */
+.cart-items h2 { /* Título "Seu Carrinho" */
+    font-size: 24px; /* Ajuste o tamanho se necessário */
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+}
+
+.cart-items .cart-item {
+  /* Layout Principal do Item: Flexbox */
+  display: flex;             
+  justify-content: space-between; 
+  align-items: center;       
+  padding: var(--space-lg) 0;  /* Padding apenas vertical, remove horizontal */
+  border-bottom: 1px solid var(--color-border); /* Linha divisória */
+  gap: var(--space-md);      /* Espaço entre a parte principal e os controles */
+}
+
+.cart-items .cart-item:last-child {
+  border-bottom: none; /* Remove a linha do último item */
+}
+
+/* Wrapper para Imagem + Detalhes (Novo seletor) */
+.cart-item-main { 
+  display: flex;     
+  align-items: center; 
+  gap: var(--space-md); /* Espaço entre imagem e texto */
+  flex-grow: 1;      /* Permite que esta seção cresça para empurrar controles */
+}
+
+.cart-item-img { /* Usando sua classe existente .item-details img */
+  flex-shrink: 0;   
+  width: 80px;       
+  height: 80px;      
+  object-fit: cover;
+  background-color: var(--color-input-bg);
+  border-radius: 4px;
+}
+
+/* Detalhes do Item (Nome, Variação, Preço) */
+.cart-item-details { /* Usando sua classe existente .item-details .text-content (ou similar) */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; 
+}
+
+.cart-item-details h4 { /* Usando h4 como no HTML sugerido */
+  font-size: 16px;
+  font-weight: 500; /* Um pouco menos forte que o título */
+  margin: 0;
+  color: var(--color-text-dark);
+}
+
+.cart-item-details .item-variation { /* Estilo para variação (Tamanho, Cor) */
+  font-size: 14px;
+  color: var(--color-text-light-gray); /* Usando sua variável */
+  margin: 0;
+}
+
+.cart-item-details .cart-item-price { /* Usando sua classe .price dentro dos detalhes */
+  font-size: 16px; /* Mantém tamanho igual ao nome */
+  font-weight: 500;
+  margin-top: 5px; /* Pequeno espaço acima do preço */
+  color: var(--color-text-dark);
+}
+
+
+/* --- Controles do Item (Quantidade + Lixeira) --- */
+.cart-item-controls { /* Sua classe .item-controls */
+  display: flex;
+  align-items: center; 
+  gap: 1rem;        /* Espaço entre quantidade e lixeira */
+  flex-shrink: 0; /* Impede que os controles encolham */
+}
+
+/* Seletor de Quantidade */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border); /* Usando sua variável */
+  border-radius: 4px;
+  overflow: hidden; 
+}
+
+.quantity-btn {
+  background-color: var(--color-input-bg); /* Fundo sutil */
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-text-medium); /* Cor mais suave */
+}
+.quantity-btn:hover {
+  background-color: #f0f0f0; /* Leve escurecida no hover */
+  color: var(--color-text-dark);
+}
+
+.quantity-value {
+  padding: 0.4rem 0.8rem; 
+  font-size: 0.9em;
+  min-width: 20px; 
+  text-align: center;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-dark);
+}
+
+/* Botão de Remover (Lixeira) */
+.delete-item-btn {
+  background: none;
+  border: none;
+  padding: 0.3rem; 
+  cursor: pointer;
+  color: red; /* Cor inicial mais suave */
+  line-height: 1; 
+  transition: color 0.2s ease; /* Transição suave */
+}
+
+.delete-item-btn svg {
+  display: block; 
+  width: 18px;   
+  height: 18px;  
+}
+
+.delete-item-btn:hover {
+  color: rgb(112, 20, 20); /* Muda para vermelho no hover */
+}
+
+
+/* --- Resumo do Carrinho --- */
+.cart-summary {
+  border: 1px solid var(--color-border);
+  padding: 25px;
+  border-radius: 8px;
+  position: sticky; /* Mantém visível ao rolar */
+  top: 30px; /* Distância do topo */
+}
+
+.cart-summary h2 {
+  font-size: 20px; /* Um pouco menor que o título principal */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 14px; /* Tamanho um pouco menor para linhas de resumo */
+  color: var(--color-text-medium);
+}
+
+.summary-row .value {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.summary-row .discount {
+  color: var(--color-discount-red);
+  font-weight: 500;
+}
+
+.cart-summary hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 20px 0;
+}
+
+.total-row {
+  display: flex; /* Adicionado para alinhar */
+  justify-content: space-between; /* Adicionado para alinhar */
+  font-weight: 700;
+  font-size: 18px; /* Total um pouco menor que o título */
+  color: var(--color-text-dark);
+}
+
+/* Cupom */
+.coupon-form {
+  display: flex;
+  margin: 25px 0; /* Aumenta espaço vertical */
+}
+
+.coupon-form input {
+  flex: 1;
+  border-radius: 25px; /* Totalmente arredondado */
+  padding: 10px 15px;
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-border); /* Borda mais suave */
+  font-size: 14px;
+}
+/* Remove sobreposição e ajusta botão */
+.coupon-form button {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-left: 10px; /* Espaço entre input e botão */
+  transition: background-color 0.3s;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.coupon-form button:hover {
+  background-color: #333;
+}
+
+/* Mensagem do Cupom */
+.coupon-message {
+  font-size: 14px;
+  margin-top: -10px; /* Puxa para mais perto do form */
+  margin-bottom: 20px; /* Espaço antes do botão finalizar */
+  text-align: center;
+  font-weight: 500;
+  min-height: 1.5em; /* Garante espaço mesmo sem mensagem */
+}
+.coupon-message.success {
+  color: var(--color-verified-green); 
+}
+.coupon-message.error {
+  color: var(--color-link-red); 
+}
+
+
+/* Botão Finalizar Compra */
+.cart-summary .btn-dark {
+  width: 100%;
+  padding: 12px 20px; /* Botão ligeiramente maior */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Mensagem de Carrinho Vazio */
+.empty-cart-message {
+    text-align: center;
+    padding: var(--space-xl) 0;
+    color: var(--color-text-medium);
+    font-style: italic;
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    margin-top: var(--space-md);
+}
+
+/* --- Estilos para Calculadora de Frete no Carrinho --- */
+
+.shipping-calculator {
+    margin-top: 20px; /* Espaço acima */
+    margin-bottom: 15px; /* Espaço abaixo antes da linha do frete */
+}
+
+.shipping-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--color-text-medium);
+}
+
+.cep-form {
+    display: flex;
+    align-items: center; /* Alinha input e botão verticalmente */
+    gap: 10px; /* Espaço entre input e botão */
+}
+
+#cep-input {
+    flex-grow: 1; /* Input ocupa o espaço disponível */
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px; /* Borda menos arredondada que cupom? */
+    font-size: 14px;
+    background-color: var(--color-input-bg);
+}
+
+#calculate-shipping-btn {
+    padding: 10px 15px;
+    background-color: var(--color-secondary, #6c757d); /* Cor secundária (cinza) */
+    color: var(--color-white, #fff);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#calculate-shipping-btn:hover {
+    background-color: #5a6268; /* Cor secundária mais escura */
+}
+
+.shipping-message {
+    font-size: 13px;
+    margin-top: 8px;
+    min-height: 1.2em; /* Garante espaço mesmo sem mensagem */
+    color: var(--color-link-red); /* Cor padrão para erros */
+}
+.shipping-message.loading {
+    color: var(--color-text-medium); /* Cor enquanto "calcula" */
+}
+.shipping-message.success {
+    color: var(--color-verified-green); /* Cor para sucesso (opcional) */
+}
+
+/* Garante que a linha do frete tenha espaço se o valor for ' -- ' */
+.shipping-row #shipping-value {
+    min-width: 50px; 
+    text-align: right;
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 992px) { /* Tablets */
+  .cart-layout {
+      grid-template-columns: 1fr; /* Empilha a lista e o resumo */
+  }
+  .cart-summary {
+      position: static; /* Remove o sticky */
+      margin-top: var(--space-lg);
+  }
+}
+
+@media (max-width: 576px) { /* Celulares */
+  .cart-item {
+      align-items: flex-start; /* Alinha no topo */
+      padding: var(--space-md) 0;
+  }
+  .cart-item-main {
+      flex-direction: column; /* Empilha imagem e detalhes */
+      align-items: flex-start;
+      width: 100%; 
+  }
+   .cart-item-img {
+       width: 60px; /* Imagem menor */
+       height: 60px;
+   }
+   .cart-item-controls {
+       flex-direction: row; /* Volta a alinhar horizontalmente */
+       justify-content: space-between; /* Espaça controles */
+       width: 100%; 
+       margin-top: 1rem;
+   }
+   /* Reduz um pouco o tamanho dos títulos no mobile */
+   .cart-items h2, .cart-summary h2 {
+       font-size: 20px;
+   }
+   .total-row {
+       font-size: 16px;
+   }
+   .coupon-form button {
+       padding: 10px 15px; /* Botão do cupom um pouco menor */
+   }
+   .cart-summary .btn-dark {
+       padding: 10px 15px;
+       font-size: 15px;
+   }
+}

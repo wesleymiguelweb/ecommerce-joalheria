@@ -1,0 +1,150 @@
+/* css/atomic/templates/_layout.css */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.banner img {
+  width: 100%;
+}
+.brands-bar {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.view-more-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* TELA ADM */
+.admin-body-bg {
+  background-color: var(--admin-bg-color);
+  color: var(--admin-text-color);
+  font-family: var(--font-family-base, sans-serif); /* Garante a fonte base */
+}
+
+.admin-main.container {
+  padding-top: 2rem; /* Espaçamento abaixo do header */
+  padding-bottom: 2rem;
+}
+
+.admin-card {
+  background-color: var(--admin-card-bg);
+  border: 1px solid var(--admin-border-color);
+  border-radius: 0.375rem; /* Bordas arredondadas suaves */
+  padding: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Sombra sutil */
+}
+
+.admin-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem; /* Tamanho do título principal da seção */
+  font-weight: 500;
+}
+.subtitle {
+  color: var(--admin-secondary-text);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9em;
+}
+
+/* Utilitário para tempo dentro da tabela */
+.time {
+    display: block;
+    font-size: 0.8em;
+    color: var(--admin-secondary-text);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .brands-bar {
+        padding: 12px;
+        font-size: 14px;
+        gap: 10px;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 12px;
+    }
+
+    .brands-bar {
+        flex-wrap: wrap;
+        padding: 10px;
+        font-size: 12px;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .banner img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .admin-card {
+        padding: 1rem;
+    }
+
+    .admin-card h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile Pequeno (até 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .brands-bar {
+        padding: 8px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .banner img {
+        max-height: 200px;
+    }
+
+    .admin-card {
+        padding: 0.75rem;
+    }
+
+    .admin-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 0.85em;
+    }
+}

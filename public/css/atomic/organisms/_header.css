@@ -1,0 +1,320 @@
+/* css/atomic/organisms/_header.css */
+
+/* Estilos da Barra Superior (Top Bar) */
+.top-bar {
+  background-color: var(--color-primary); /* Cor laranja definida nas variáveis */
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+  color: var(--color-dark); /* Texto escuro na barra laranja */
+  margin-bottom: var(--space-sm); /* ADICIONADO: Espaço abaixo da barra laranja */
+}
+.top-bar a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: var(--color-dark); /* Garante que o link também seja escuro */
+}
+.top-bar .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none; /* Garante que não haja borda */
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--color-dark);
+  padding: 0; /* Remove padding extra */
+}
+
+/* Estilos do Cabeçalho Principal */
+.main-header {
+  display: flex; /* Alinha os itens em linha */
+  justify-content: space-between; /* Espaça os blocos principais (logo, nav, icons) */
+  align-items: center; /* Alinha verticalmente no centro */
+  padding: 20px 0; /* Espaçamento vertical (acima/abaixo) do cabeçalho */
+  /* border-bottom: 1px solid var(--color-border); */ /* REMOVIDO: Linha inferior removida */
+  margin-bottom: var(--space-xl); /* ADICIONADO: Espaço abaixo do cabeçalho, antes do banner/conteúdo */
+}
+
+/* Estilo do Logo */
+.main-header .logo {
+  font-family: var(--font-logo); /* Fonte específica para o logo */
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-decoration: none; /* Garante que não haja sublinhado */
+  margin: 0 20px; /* Adiciona margem lateral */
+  padding: 10px 0; /* Adiciona padding vertical */
+}
+
+/* Estilo da Navegação Principal */
+.main-header nav {
+  display: flex;
+  gap: 40px; /* Espaçamento ENTRE os links ("Página Inicial", "Feminino", etc.) */
+  margin-left: 80px;  /* AJUSTADO: Espaço entre o LOGO e a NAVEGAÇÃO */
+  margin-right: 80px; /* AJUSTADO: Espaço entre a NAVEGAÇÃO e os ÍCONES */
+}
+.main-header nav a {
+  font-size: 16px;
+  color: var(--color-text-medium); /* Cor cinza para os links */
+  transition: color 0.3s; /* Transição suave da cor ao passar o mouse */
+  text-decoration: none; /* Garante que não haja sublinhado */
+}
+.main-header nav a:hover {
+  color: var(--color-dark); /* Muda para cor escura no hover */
+}
+
+/* Estilo do Bloco de Ícones da Direita */
+.main-header .header-icons {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  gap: 25px; /* AJUSTADO: Espaçamento ENTRE a pesquisa e os ícones */
+}
+
+/* Estilos da Barra de Pesquisa (dentro do bloco de ícones) */
+.header-icons .search-container {
+  position: relative; /* Necessário para posicionar o ícone dentro */
+  display: flex;
+  align-items: center;
+}
+.header-icons .search-container .search-input {
+  background-color: var(--color-input-bg); /* Fundo cinza claro */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 10px 15px 10px 45px; /* Espaçamento interno (deixa espaço para o ícone à esquerda) */
+  width: 250px; /* Largura da caixa de pesquisa */
+  border: 1px solid var(--color-border); /* Borda fina */
+  font-size: 14px; /* Tamanho da fonte do placeholder */
+}
+.header-icons .search-container .search-input:focus {
+  border-color: var(--color-primary); /* Muda a cor da borda ao focar */
+  background-color: var(--color-white); /* Opcional: Fundo branco ao focar */
+}
+.header-icons .search-container .search-icon {
+  position: absolute; /* Posiciona o ícone sobre o input */
+  left: 18px; /* Distância da esquerda */
+  color: var(--color-text-light-gray); /* Cor cinza para o ícone */
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Permite clicar no input mesmo sobre o ícone */
+}
+
+/* Estilos dos Links de Ícone (carrinho, login) */
+.header-icons .icon-link {
+  color: var(--color-text-dark); /* Cor padrão dos ícones */
+  transition: color 0.3s; /* Transição suave da cor */
+}
+.header-icons .icon-link svg {
+    display: block; /* Garante alinhamento correto */
+}
+.header-icons .icon-link:hover {
+  color: var(--color-primary); /* Muda para cor laranja no hover */
+}
+
+
+/* --- ESTILOS PARA O CONTADOR DO CARRINHO --- */
+
+/* Posiciona o link do carrinho relativamente para o badge se posicionar nele */
+.header-icons .cart-icon-link {
+    position: relative;
+    display: inline-block; /* Garante que o link tenha dimensões */
+}
+
+/* Estilo do Badge (a "bolinha" com o número) */
+.cart-item-count {
+    position: absolute; /* Posicionamento absoluto em relação ao link pai */
+    top: -8px;          /* Ajuste para ficar um pouco acima do ícone */
+    right: -10px;        /* Ajuste para ficar um pouco à direita do ícone */
+    background-color: var(--color-primary); /* Cor de fundo (laranja) */
+    color: var(--color-dark);          /* Cor do texto (preto) */
+    border-radius: 50%; /* Faz ficar redondo */
+    width: 20px;        /* Largura fixa */
+    height: 20px;       /* Altura fixa */
+    font-size: 11px;    /* Tamanho pequeno da fonte */
+    font-weight: bold;  /* Texto em negrito */
+    display: flex;      /* Para centralizar o número */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    line-height: 1;     /* Garante que o número fique bem centralizado */
+
+    /* Escondido por defeito, mostrado via JS */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8); /* Efeito de "zoom" ao aparecer */
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+/* Classe para mostrar o badge (adicionada via JS) */
+.cart-item-count.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* --- ESTILOS PARA A BARRA DE MARCAS COM SCROLL (se aplicável neste ficheiro) --- */
+.brands-scroll-content {
+  display: inline-block;
+  animation: scrollBrands 20s linear infinite;
+}
+.brands-scroll-content span {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 16px;
+}
+.brands-bar:hover .brands-scroll-content {
+  animation-play-state: paused;
+}
+@keyframes scrollBrands {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- ESTILOS PARA PESQUISA E ADMIN BADGE --- */
+
+/* Formulário de pesquisa */
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 250px;
+}
+
+.search-form input {
+  background-color: var(--color-input-bg);
+  border-radius: 20px;
+  padding: 10px 15px 10px 45px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.search-form input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-white);
+  outline: none;
+}
+
+.search-form .search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--color-text-light-gray);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Badge de Admin */
+.admin-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: #c9a55c;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Menu do Usuário (login/conta preview) */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 6px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-menu-toggle:hover {
+  color: var(--color-primary);
+  background-color: var(--color-input-bg);
+}
+
+.user-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 220px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: none !important;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.user-menu.open .user-menu-dropdown {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-user-welcome {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-text-light-gray);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.menu-user-name {
+  margin: 2px 0 8px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 0;
+}
+
+.menu-link {
+  display: block;
+  padding: 8px 0;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.menu-link:hover {
+  color: var(--color-primary);
+}
+
+.menu-logout {
+  margin-top: 6px;
+}
+
+.menu-logout-btn {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.menu-logout-btn:hover {
+  background: #e6b86f;
+}
+
+.menu-logout-btn:active {
+  transform: translateY(1px);
+}

@@ -1,0 +1,66 @@
+/* Brands Bar - Carousel component */
+
+.brands-bar {
+    background-color: #111111;
+    padding: 20px 0;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.brands-scroll-content {
+    display: flex;
+    gap: 0;
+    animation: scrollBrands 30s linear infinite;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    width: fit-content;
+}
+
+.brands-scroll-content.paused {
+    animation-play-state: paused;
+}
+
+@keyframes scrollBrands {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.brands-scroll-content span {
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
+    padding: 10px 25px;
+    border-radius: 4px;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.brands-scroll-content span:hover {
+    color: #f7b896;
+    text-shadow: 0 0 8px rgba(247, 184, 150, 0.3);
+    background-color: rgba(247, 184, 150, 0.1);
+}
+
+.brands-scroll-content span.active {
+    color: #f7b896;
+    background-color: rgba(247, 184, 150, 0.2);
+    font-weight: 700;
+}

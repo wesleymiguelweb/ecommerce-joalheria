@@ -1,0 +1,111 @@
+.admin-header {
+  background-color: var(--admin-card-bg);
+  border-bottom: 1px solid var(--admin-border-color);
+  padding: 0.8rem 0; /* Espaçamento vertical */
+  position: sticky; /* Fixa no topo (opcional) */
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9em;
+}
+.admin-breadcrumbs a {
+  color: var(--admin-primary-color);
+  text-decoration: none;
+}
+.admin-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.admin-breadcrumbs span { /* Separador '>' e texto atual */
+  color: var(--admin-secondary-text);
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaçamento entre ícones/busca */
+}
+
+.admin-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.admin-search i {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--admin-secondary-text);
+  pointer-events: none;
+  z-index: 1;
+}
+.admin-search input[type="search"] {
+  padding: 0.4rem 0.75rem 0.4rem 2.25rem; /* Espaço para o ícone */
+  border: 1px solid var(--admin-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--admin-bg-color); /* Fundo sutil */
+  min-width: 200px; /* Largura mínima */
+}
+.admin-search input[type="search"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: white;
+}
+
+.icon-button { /* Estilo base para botões só com ícone */
+  background: none;
+  border: none;
+  padding: 0.25rem; 
+  margin: 0;
+  color: var(--admin-secondary-text);
+  cursor: pointer;
+  position: relative; /* Para o badge */
+  line-height: 1; /* Remove altura extra */
+}
+.icon-button:hover {
+  color: var(--admin-text-color);
+}
+.icon-button i {
+  font-size: 1.25rem; /* Tamanho do ícone */
+  vertical-align: middle;
+}
+
+.notifications .badge { /* Posicionamento do badge de notificação */
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    font-size: 0.7em;
+    padding: 0.2em 0.4em;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user-initial {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--admin-primary-color);
+  color: white;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+}
+.user-name {
+  font-size: 0.9em;
+}

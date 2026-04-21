@@ -1,0 +1,12 @@
+/* css/atomic/templates/_banner.css */
+
+.banner {
+    margin-top: var(--space-xl); /* Adiciona 32px de espaço ACIMA do banner */
+    display: block; /* Garante que a margem funcione corretamente em alguns navegadores */
+}
+
+/* Opcional: Estilo para a imagem dentro do banner (se necessário) */
+.banner img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura */
+    display: block; /* Remove espaços extras abaixo da imagem */
+}

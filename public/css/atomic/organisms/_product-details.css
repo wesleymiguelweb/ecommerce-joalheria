@@ -1,0 +1,101 @@
+/* css/atomic/organisms/_product-details.css */
+.product-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+.product-gallery .main-image {
+  background-color: var(--color-input-bg);
+  border-radius: 8px;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+.product-gallery .main-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.product-gallery .thumbnail-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+.product-gallery .thumbnail-images img {
+  background-color: var(--color-input-bg);
+  border-radius: 8px;
+  padding: var(--space-sm);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s;
+}
+.product-gallery .thumbnail-images img:hover {
+  border-color: var(--color-text-medium);
+}
+.product-info h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+.product-info .rating-price {
+  margin: var(--space-md) 0;
+}
+.product-info .rating-price .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.product-info .rating-price .rating span {
+  font-size: 14px;
+  color: var(--color-text-light-gray);
+}
+.product-info .info-price {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: var(--space-sm);
+}
+.product-info .info-price .original {
+  font-size: 18px;
+  color: var(--color-text-light-gray);
+  text-decoration: line-through;
+  margin-left: var(--space-sm);
+  font-weight: 400;
+}
+.product-info .stock-info {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: #f9f9f9;
+  border-left: 3px solid #f7b896;
+  border-radius: 4px;
+}
+.product-info .stock-details {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.product-info .stock-details strong {
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+.product-info .stock-value {
+  font-weight: 600;
+  color: #198754;
+}
+.product-info .availability-status {
+  font-weight: 600;
+}
+.product-info .description {
+  font-size: 14px;
+  color: var(--color-text-medium);
+  line-height: 1.6;
+  margin: var(--space-md) 0;
+}
+.product-info .controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}

@@ -1,0 +1,28 @@
+/* css/atomic/atoms/_typography.css */
+.logo {
+  font-family: var(--font-logo);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin: var(--space-xxl) 0 var(--space-xl);
+}
+.breadcrumb {
+  font-size: 14px;
+  color: var(--color-text-light-gray);
+  margin: var(--space-lg) 0;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb span {
+  margin: 0 var(--space-sm);
+}
+.breadcrumb .current {
+  color: var(--color-text-dark);
+}

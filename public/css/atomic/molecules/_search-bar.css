@@ -1,0 +1,23 @@
+/* css/atomic/molecules/_search-bar.css */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-container .search-input {
+  background-color: var(--color-input-bg);
+  border-radius: 20px;
+  padding: 10px 15px 10px 45px;
+  width: 250px;
+  border: 1px solid var(--color-border);
+}
+.search-container .search-input:focus {
+  border-color: var(--color-primary);
+}
+.search-container .search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--color-text-light-gray);
+  width: 20px;
+  height: 20px;
+}

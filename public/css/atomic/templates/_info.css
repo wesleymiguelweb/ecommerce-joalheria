@@ -1,0 +1,64 @@
+/* Info Pages - Information page layouts and styling */
+
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #d4af37;
+}
+
+.breadcrumb span.current {
+    color: #d4af37;
+    font-weight: 500;
+}
+
+.info-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.info-page h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.info-content {
+    line-height: 1.8;
+    color: #555;
+}
+
+.info-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin: 2rem 0 1rem 0;
+}
+
+.info-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.info-content ul {
+    margin: 1rem 0 1rem 2rem;
+    list-style-type: disc;
+}
+
+.info-content li {
+    margin-bottom: 0.5rem;
+}

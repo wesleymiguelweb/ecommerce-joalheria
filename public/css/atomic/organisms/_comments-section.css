@@ -1,0 +1,70 @@
+/* css/atomic/organisms/_comments-section.css */
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+.comments-header .filters {
+  display: flex;
+  gap: 10px;
+}
+.comments-header .filters .filter-btn {
+  padding: 8px 15px;
+  border: 1px solid var(--color-border-darker);
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.comments-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.comment-card {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.comment-card .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-card .user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+}
+.comment-card .user svg {
+  color: var(--color-verified-green);
+  width: 18px;
+}
+.comment-card .options {
+  color: var(--color-text-light-gray);
+  cursor: pointer;
+}
+.comment-card .rating {
+  display: flex;
+  margin: var(--space-sm) 0;
+  color: var(--color-star-yellow);
+}
+.comment-card .rating svg {
+  width: 16px;
+}
+.comment-card .comment-body {
+  font-size: 14px;
+  color: var(--color-text-medium);
+  line-height: 1.6;
+}
+.comment-card .comment-date {
+  font-size: 12px;
+  color: var(--color-text-light-gray);
+  margin-top: var(--space-md);
+}
+.view-more-comments {
+  text-align: center;
+  margin-top: var(--space-lg);
+}

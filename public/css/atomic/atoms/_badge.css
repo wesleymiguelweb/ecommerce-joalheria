@@ -1,0 +1,28 @@
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem; /* Borda arredondada */
+}
+
+/* Badge de Notificação (exemplo) */
+.notification-badge {
+    background-color: var(--sale-color, #dc3545);
+    color: white;
+    border-radius: 50%; /* Bolinha */
+}
+
+/* Badges específicos da tabela */
+.badge-adm { background-color: var(--admin-badge-adm-bg); color: var(--admin-badge-adm-text); }
+.badge-relogio { background-color: var(--admin-badge-relogio-bg); color: var(--admin-badge-relogio-text); }
+.badge-corrente { background-color: var(--admin-badge-corrente-bg); color: var(--admin-badge-corrente-text); }
+.badge-pulseira { background-color: var(--admin-badge-pulseira-bg); color: var(--admin-badge-pulseira-text); }
+.badge-brincos { background-color: var(--admin-badge-brincos-bg); color: var(--admin-badge-brincos-text); }
+.badge-anel { background-color: var(--admin-badge-anel-bg); color: var(--admin-badge-anel-text); }
+.badge-colar { background-color: var(--admin-badge-colar-bg); color: var(--admin-badge-colar-text); }
+/* Adicione outros badges se necessário */

@@ -1,0 +1,27 @@
+/* --- Estilos para Filtro de Cor --- */
+
+.color-filter-list {
+  display: flex;     /* Alinha as bolinhas horizontalmente */
+  flex-wrap: wrap;   /* Permite que quebrem para a próxima linha se não couberem */
+  gap: 0.5rem;       /* Espaçamento entre as bolinhas (ajuste conforme necessário) */
+  margin-top: 0.5rem; /* Espaço abaixo do título "Cor" */
+}
+
+.color-swatch {
+  display: inline-block; /* Permite definir width, height e border-radius */
+  width: 25px;           /* Largura da bolinha */
+  height: 25px;          /* Altura da bolinha */
+  border-radius: 50%;    /* Faz ficar redonda */
+  border: 1px solid #ccc; /* Uma borda sutil para ser visível mesmo em cores claras */
+  cursor: pointer;         /* Indica que é clicável */
+  vertical-align: middle; /* Alinha melhor se houver texto ao lado */
+  /* Remove estilos padrão caso você mude para <button> no futuro */
+  padding: 0; 
+  background-clip: padding-box; /* Garante que a cor de fundo respeite bordas/padding */
+}
+
+/* Opcional: Estilo para quando uma cor for selecionada (adicionar classe 'active' com JS) */
+.color-swatch.active {
+  border: 2px solid var(--primary-color, #000); /* Borda mais grossa na cor primária ou preta */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Uma leve sombra */
+}

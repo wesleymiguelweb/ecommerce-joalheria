@@ -1,0 +1,176 @@
+/* css/atomic/molecules/_product-card.css */
+
+/* Product Card - Unified Styles */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Container da Imagem */
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-background-light);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  background-color: #f5f5f5;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Efeito Hover: Zoom na Imagem */
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Badge (Ex: Promoção) */
+.badge {
+  position: absolute;
+  top: var(--space-md, 12px);
+  left: var(--space-md, 12px);
+  background-color: var(--color-primary, #c9a55c);
+  color: var(--color-dark);
+  padding: var(--space-xs, 6px) var(--space-sm, 10px);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Product Info */
+.product-card h3 {
+  padding: 0.75rem 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 3em;
+  margin: 0;
+}
+
+.product-card .price {
+  padding: 0 1rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.product-card .stock {
+  padding: 0 1rem 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Botão Adicionar ao Carrinho */
+.add-to-cart-btn,
+.add-to-cart-btn-listing,
+.add-to-cart-btn-hover {
+  margin: 0 1rem 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--color-dark);
+  color: var(--color-white, white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* Botões somem no hover (pedido: não mostrar ao passar mouse) */
+.add-to-cart-btn-listing,
+.add-to-cart-btn-hover {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.product-card:hover .add-to-cart-btn-listing,
+.product-card:hover .add-to-cart-btn-hover {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Hover nos botões */
+.add-to-cart-btn:hover,
+.add-to-cart-btn-listing:hover,
+.add-to-cart-btn-hover:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Nome do Produto */
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 600; /* Mais destaque */
+  margin-top: var(--space-md);
+  color: var(--color-text-dark);
+}
+
+/* Avaliação (Estrelas) */
+.product-rating {
+  margin-top: var(--space-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.rating-stars {
+  display: flex;
+}
+.rating-stars svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-star-yellow);
+}
+.rating-stars svg.star-empty { /* Para estrelas vazias ou semi-preenchidas */
+  color: var(--color-border-darker);
+}
+.review-count {
+  font-size: 12px;
+  color: var(--color-text-light-gray);
+}
+
+
+/* Preço */
+.product-card .price {
+  font-size: 14px;
+  color: var(--color-text-medium);
+  margin-top: var(--space-xs); /* Menos espaço se houver estrelas */
+}
+.price .sale {
+  color: var(--color-dark);
+  font-weight: 600; /* Preço atual mais destacado */
+}
+.price .original {
+  text-decoration: line-through;
+  margin-left: var(--space-sm);
+  color: var(--color-text-light-gray);
+}

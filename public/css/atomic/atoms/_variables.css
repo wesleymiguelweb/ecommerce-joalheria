@@ -1,0 +1,54 @@
+/* css/atomic/atoms/_variables.css */
+:root {
+  /* Cores Fiéis às Imagens */
+  --color-primary: #f7b896;
+  --color-dark: #111111;
+  --color-text-dark: #333333;
+  --color-text-medium: #555555;
+  --color-text-light-gray: #888888;
+  --color-text-light: #ffffff;
+  --color-white: #ffffff;
+  --color-background-light: #f9f9f9;
+  --color-input-bg: #f3f3f3;
+  --color-border: #eeeeee;
+  --color-border-darker: #e5e5e5;
+  --color-link-red: #d9534f;
+  --color-discount-red: #b12704;
+  --color-star-yellow: #facc15;
+  --color-verified-green: #22c55e;
+  /* ... suas outras variáveis ... */
+  --admin-bg-color: #f8f9fa; /* Fundo cinza claro */
+  --admin-card-bg: #ffffff; /* Fundo branco do card */
+  --admin-border-color: #dee2e6; /* Cor da borda sutil */
+  --admin-text-color: #212529; /* Cor principal do texto */
+  --admin-secondary-text: #6c757d; /* Cor de texto secundário (subtítulos, tempo) */
+  --admin-primary-color: var(--color-primary); /* Usa cor principal da marca no painel */
+  --admin-badge-adm-bg: #ffc107; /* Cor badge ADM (Amarelo) */
+  --admin-badge-adm-text: #000;
+  --admin-badge-relogio-bg: #0dcaf0; /* Ciano */
+  --admin-badge-relogio-text: #000;
+  --admin-badge-corrente-bg: #198754; /* Verde */
+  --admin-badge-corrente-text: #fff;
+  --admin-badge-pulseira-bg: #dc3545; /* Vermelho */
+  --admin-badge-pulseira-text: #fff;
+   /* Adicione cores para outros badges: brincos, anel, colar */
+  --admin-badge-brincos-bg: #fd7e14; /* Laranja */
+  --admin-badge-brincos-text: #fff;
+  --admin-badge-anel-bg: #6f42c1; /* Roxo */
+  --admin-badge-anel-text: #fff;
+  --admin-badge-colar-bg: #d63384; /* Rosa */
+  --admin-badge-colar-text: #fff;
+
+  /* Fontes */
+  --font-body: 'Poppins', sans-serif;
+  --font-logo: 'Cormorant Garamond', serif;
+
+  /* Espaçamento */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 60px;
+}
+

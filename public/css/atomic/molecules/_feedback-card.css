@@ -1,0 +1,31 @@
+/* css/atomic/molecules/_feedback-card.css */
+.feedback-card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  border-radius: 8px;
+}
+.feedback-card .user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+}
+.feedback-card .user svg {
+  color: var(--color-verified-green);
+  width: 18px;
+  height: 18px;
+}
+.feedback-card .rating {
+  display: flex;
+  margin: var(--space-sm) 0;
+  color: var(--color-star-yellow);
+}
+.feedback-card .rating svg {
+  width: 16px;
+  height: 16px;
+}
+.feedback-card p {
+  font-size: 14px;
+  color: var(--color-text-medium);
+  line-height: 1.6;
+}

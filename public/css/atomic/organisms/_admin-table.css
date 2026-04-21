@@ -1,0 +1,60 @@
+.admin-action-bar {
+  display: flex;
+  justify-content: flex-end; /* Alinha botões à direita por padrão */
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para parecer dropdown */
+.dropdown-toggle i { 
+    margin-left: 0.5rem;
+    font-size: 0.8em;
+}
+
+.table-responsive {
+  overflow-x: auto; /* Adiciona rolagem horizontal se a tabela for muito larga */
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre células */
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem; /* Espaçamento interno das células */
+  text-align: left;
+  border-bottom: 1px solid var(--admin-border-color); /* Linha separadora */
+  vertical-align: middle; /* Alinha conteúdo verticalmente */
+}
+
+.admin-table th {
+  font-weight: 500;
+  color: var(--admin-secondary-text);
+  background-color: var(--admin-bg-color); /* Fundo sutil para cabeçalho */
+}
+
+.admin-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.03); /* Fundo leve no hover */
+}
+
+/* Checkbox alignment */
+.admin-table th:first-child,
+.admin-table td:first-child {
+  width: 1%; /* Largura mínima para checkbox */
+  text-align: center;
+}
+.admin-table td:first-child input[type="checkbox"] {
+  vertical-align: middle; /* Alinha checkbox */
+}
+
+
+/* Botão de ações (3 pontos) */
+.admin-table .actions {
+  color: var(--admin-secondary-text);
+}
+.admin-table .actions i {
+   font-size: 1rem; /* Tamanho do ícone de 3 pontos */
+}

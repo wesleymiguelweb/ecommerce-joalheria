@@ -1,0 +1,46 @@
+/* css/style.css */
+
+/* 0. Fontes Externas */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+/* 1. Átomos (Base) */
+@import 'atomic/atoms/_variables.css';
+@import 'atomic/atoms/_reset.css';
+@import 'atomic/atoms/_typography.css';
+@import 'atomic/atoms/_buttons.css';
+@import 'atomic/atoms/_inputs.css';
+@import 'atomic/atoms/_badge.css';
+
+/* 2. Moléculas (Componentes simples) */
+@import 'atomic/molecules/_product-card.css';
+@import 'atomic/molecules/_search-bar.css';
+@import 'atomic/molecules/_feedback-card.css';
+@import 'atomic/molecules/_quantity-selector.css';
+@import 'atomic/molecules/_color-selector.css';
+@import 'atomic/molecules/_tabs.css';
+@import 'atomic/molecules/_modal.css';
+
+/* 3. Organismos (Componentes complexos) */
+@import 'atomic/organisms/_header.css';
+@import 'atomic/organisms/_footer.css';
+@import 'atomic/organisms/_contact-section.css';
+@import 'atomic/organisms/_product-grid.css';
+@import 'atomic/organisms/_product-details.css';
+@import 'atomic/organisms/_cart.css';
+@import 'atomic/organisms/_comments-section.css';
+@import 'atomic/organisms/_checkout.css';
+@import 'atomic/organisms/_admin-form.css';
+@import 'atomic/organisms/_admin-header.css';
+@import 'atomic/organisms/_admin-table.css';
+@import 'atomic/organisms/_admin-utilities.css';
+@import 'atomic/organisms/_brands-bar.css';
+@import 'atomic/organisms/_history-widget.css';
+
+/* 4. Templates (Layouts de página) */
+@import 'atomic/templates/_layout.css';
+@import 'atomic/templates/_auth-layout.css';
+@import 'atomic/templates/_listing-page.css';
+@import 'atomic/templates/_banner.css';
+@import 'atomic/templates/_dashboard.css';
+@import 'atomic/templates/_info.css';
+@import 'atomic/templates/_responsive.css'; /* Responsividade global */

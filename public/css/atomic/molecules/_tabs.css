@@ -1,0 +1,26 @@
+/* css/atomic/molecules/_tabs.css */
+.tabs-nav {
+  display: flex;
+  gap: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  margin-top: var(--space-xxl);
+}
+.tabs-nav .tab-link {
+  padding: var(--space-md) 0;
+  font-size: 16px;
+  color: var(--color-text-light-gray);
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.tabs-nav .tab-link.active {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-dark);
+}
+.tabs-content .tab-pane {
+  display: none;
+  padding-top: var(--space-xl);
+}
+.tabs-content .tab-pane.active {
+  display: block;
+}

@@ -1,0 +1,30 @@
+/* css/atomic/atoms/_inputs.css */
+.input-field {
+  width: 100%;
+  background-color: var(--color-input-bg);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.input-field:focus {
+  border-color: var(--color-primary);
+}
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+.input-wrapper svg {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-light-gray);
+  width: 20px;
+  height: 20px;
+}
+.input-wrapper .input-field {
+  padding-left: 50px;
+  border-radius: 25px;
+}
