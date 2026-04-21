@@ -4,6 +4,7 @@
         <a href="{{ route('index') }}">Página Inicial</a>
         <a href="{{ route('feminino') }}">Feminino</a>
         <a href="{{ route('masculino') }}">Masculino</a>
+        <a href="{{ route('metricas') }}">Métricas</a>
     </nav>
     <div class="header-icons">
         <form action="{{ route('search') }}" method="GET" class="search-form">

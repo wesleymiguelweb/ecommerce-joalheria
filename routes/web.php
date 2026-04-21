@@ -13,6 +13,9 @@ use App\Http\Controllers\ReviewController;
 Route::get('/', [ProductController::class, 'index'])->name('index');
 Route::get('/feminino', [ProductController::class, 'feminino'])->name('feminino');
 Route::get('/masculino', [ProductController::class, 'masculino'])->name('masculino');
+Route::get('/metricas', function () {
+    return view('metricas');
+})->name('metricas');
 Route::get('/produto/{id?}', [ProductController::class, 'show'])->name('produto');
 Route::get('/pesquisa', [ProductController::class, 'search'])->name('search');
 // Reviews (controller valida login e permissões)
