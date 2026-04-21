@@ -26,8 +26,13 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 # Adicione esta linha antes do final do seu Dockerfile
-# Substitua a linha 29 por estas duas:
-RUN composer dump-autoload --optimize
-RUN rm -rf bootstrap/cache/*.php
+# ... (mantenha tudo até a linha 27 igual)
+
+# Ajustar permissões para que o servidor consiga ler/escrever
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Gerar o mapeamento de classes (substitua a antiga 30 por esta)
+RUN composer dump-autoload --optimize --no-scripts
 
 EXPOSE 80
+
