@@ -19,14 +19,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Compartilhar variável global para verificar se há múltiplas cores
-        view()->composer('*', function ($view) {
-            $distinctColors = \App\Models\Product::select('color')
-                ->distinct()
-                ->whereNotNull('color')
-                ->count();
-
-            $view->with('hasMultipleColors', $distinctColors > 1);
+// DESATIVADO PARA RENDER (sem MySQL): Compartilhar variável global para verificar se há múltiplas cores
+        // $distinctColors = \App\Models\Product::select('color')
+        //     ->distinct()
+        //     ->whereNotNull('color')
+        //     ->count();
+        
+        $hasMultipleColors = false; // Default para Render/local sem DB
+        
+        view()->composer('*', function ($view) use ($hasMultipleColors) {
+            $view->with('hasMultipleColors', $hasMultipleColors);
         });
     }
 }
