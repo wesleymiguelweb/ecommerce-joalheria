@@ -13,13 +13,13 @@ class ProductController extends Controller
         $demoProducts = [
             (object)[
                 'id' => 1,
-                'name' => 'Anel de Ouro 18k',
-                'description' => 'Anel elegante em ouro 18k com design clássico.',
+                'name' => 'Aliança Masculina',
+                'description' => 'Aliança elegante com design clássico.',
                 'price' => 850.00,
                 'stock' => 5,
                 'min_stock' => 3,
-                'image' => '/img/Feminino/Alianças Feminas/anel1.jpg',
-                'category' => 'feminino',
+                'image' => '/img/Masculino/Alianças Masculinas/011170-82fbf90e66aafef47217618346884958-1024-1024.webp',
+                'category' => 'masculino',
                 'brand' => 'Joalheria Luxo',
                 'color' => 'ouro'
             ],
@@ -30,20 +30,20 @@ class ProductController extends Controller
                 'price' => 420.00,
                 'stock' => 12,
                 'min_stock' => 5,
-                'image' => '/img/Masculino/Correntes Masculinas/corrente1.jpg',
+                'image' => '/img/Masculino/Correntes Masculinas/corrente_bolinhas_1_mm_60_cm_19823_1_7a54fbb5479dfc82ec470e9a6df7a016-1024-1024.webp',
                 'category' => 'masculino',
                 'brand' => 'Silver King',
                 'color' => 'prata'
             ],
             (object)[
                 'id' => 3,
-                'name' => 'Brincos Prata Feminino',
-                'description' => 'Brincos delicados em prata com zircônia.',
-                'price' => 180.00,
+                'name' => 'Relógio Masculino',
+                'description' => 'Relógio clássico e sofisticado.',
+                'price' => 1280.00,
                 'stock' => 8,
                 'min_stock' => 2,
-                'image' => '/img/Feminino/Brincos Feminos/brincos1.jpg',
-                'category' => 'feminino',
+                'image' => '/img/Masculino/Relógios Masculinos/NIM011372_1.jpg',
+                'category' => 'masculino',
                 'brand' => 'Elegance',
                 'color' => 'prata'
             ]
