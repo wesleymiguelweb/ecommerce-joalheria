@@ -142,8 +142,8 @@ class ProductController extends Controller
             'brand' => 'Elegance',
             'color' => 'prata',
             'approvedReviews' => collect([
-                (object)['comment' => 'Perfeitos! Muito delicados.', 'rating' => 5, 'user' => (object)['name' => 'Maria Silva']],
-                (object)['comment' => 'Qualidade excelente pela prata.', 'rating' => 5, 'user' => (object)['name' => 'Ana Costa']]
+                (object)['comment' => 'Perfeitos! Muito delicados.', 'rating' => 5, 'user' => (object)['name' => 'Maria Silva'], 'created_at' => now()],
+                (object)['comment' => 'Qualidade excelente pela prata.', 'rating' => 5, 'user' => (object)['name' => 'Ana Costa'], 'created_at' => now()]
             ])
         ];
         $product = $demoProduct;
