@@ -27,7 +27,13 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 # Adicione esta linha antes do final do seu Dockerfile
 # Substitua a linha 29 por estas duas:
-RUN composer dump-autoload --optimize
+# Limpar qualquer cache que possa ter vindo do Windows/Local
 RUN rm -rf bootstrap/cache/*.php
+
+# Ajustar permissões para garantir acesso aos arquivos
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Gerar o mapeamento de classes limpo
+RUN composer dump-autoload --optimize --no-scripts
 
 EXPOSE 80
