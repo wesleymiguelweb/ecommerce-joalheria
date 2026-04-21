@@ -9,21 +9,53 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        // Demo data for portfolio - no DB required
+        $demoProducts = [
+            (object)[
+                'id' => 1,
+                'name' => 'Anel de Ouro 18k',
+                'description' => 'Anel elegante em ouro 18k com design clássico.',
+                'price' => 850.00,
+                'stock' => 5,
+                'min_stock' => 3,
+                'image' => '/img/Feminino/Alianças Feminas/anel1.jpg',
+                'category' => 'feminino',
+                'brand' => 'Joalheria Luxo',
+                'color' => 'ouro'
+            ],
+            (object)[
+                'id' => 2,
+                'name' => 'Corrente Prata Masculina',
+                'description' => 'Corrente robusta em prata esterlina.',
+                'price' => 420.00,
+                'stock' => 12,
+                'min_stock' => 5,
+                'image' => '/img/Masculino/Correntes Masculinas/corrente1.jpg',
+                'category' => 'masculino',
+                'brand' => 'Silver King',
+                'color' => 'prata'
+            ],
+            (object)[
+                'id' => 3,
+                'name' => 'Brincos Prata Feminino',
+                'description' => 'Brincos delicados em prata com zircônia.',
+                'price' => 180.00,
+                'stock' => 8,
+                'min_stock' => 2,
+                'image' => '/img/Feminino/Brincos Feminos/brincos1.jpg',
+                'category' => 'feminino',
+                'brand' => 'Elegance',
+                'color' => 'prata'
+            ]
+        ];
+        $products = collect($demoProducts);
         // Buscar reviews aprovadas com dados do usuário (fallback: últimas não-aprovadas se não houver aprovadas)
-        $reviews = Review::with('user')
-            ->where('approved', true)
-            ->orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get();
-
-        // Se não houver aprovadas, mostra as mais recentes para não zerar o bloco de feedback
-        if ($reviews->isEmpty()) {
-            $reviews = Review::with('user')
-                ->orderBy('created_at', 'desc')
-                ->limit(3)
-                ->get();
-        }
+        $demoReviews = [
+            (object)['id' => 1, 'comment' => 'Produto incrível! Superou minhas expectativas.', 'rating' => 5, 'approved' => true, 'user' => (object)['name' => 'Maria Silva']],
+            (object)['id' => 2, 'comment' => 'Excelente qualidade prata.', 'rating' => 5, 'approved' => true, 'user' => (object)['name' => 'João Santos']],
+            (object)['id' => 3, 'comment' => 'Entrega rápida e embalagem perfeita!', 'rating' => 5, 'approved' => true, 'user' => (object)['name' => 'Ana Costa']]
+        ];
+        $reviews = collect($demoReviews);
 
         // Buscar marcas únicas dos produtos
         $brands = ['Joalheria Luxo', 'Silver King', 'Elegance'];
@@ -97,13 +129,36 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = Product::with('approvedReviews.user')->findOrFail($id);
+        // Demo product for portfolio detail page
+        $demoProduct = (object)[
+            'id' => $id,
+            'name' => 'Brincos Prata Feminino',
+            'description' => 'Brincos delicados em prata com zircônia. Produto de alta qualidade com design exclusivo.',
+            'price' => 180.00,
+            'stock' => 8,
+            'min_stock' => 2,
+            'image' => '/img/Feminino/Brincos Feminos/brincos1.jpg',
+            'category' => 'feminino',
+            'brand' => 'Elegance',
+            'color' => 'prata',
+            'approvedReviews' => collect([
+                (object)['comment' => 'Perfeitos! Muito delicados.', 'rating' => 5, 'user' => (object)['name' => 'Maria Silva']],
+                (object)['comment' => 'Qualidade excelente pela prata.', 'rating' => 5, 'user' => (object)['name' => 'Ana Costa']]
+            ])
+        ];
+        $product = $demoProduct;
         return view('detalhe-produto', compact('product'));
     }
 
     public function search()
     {
-        $query = Product::query();
+        // Demo search results for portfolio
+        $demoProducts = collect([
+            (object)['id' => 8, 'name' => 'Anel Prata', 'price' => 250.00, 'image' => '/img/Feminino/Alianças Feminas/anel1.jpg'],
+            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'price' => 450.00, 'image' => '/img/Masculino/Pulseira Masculina/pulseira1.jpg']
+        ]);
+        $products = new \Illuminate\Pagination\LengthAwarePaginator($demoProducts, 20, 9, 1);
+        $searchTerm = request('q', 'prata');
         $searchTerm = request('q');
 
         if ($searchTerm) {

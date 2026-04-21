@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => 'sqlite', // FORÇADO: Sempre usar MySQL em produção
+'default' => 'sqlite',
 
     /*
     |--------------------------------------------------------------------------
@@ -31,12 +31,12 @@ return [
 
     'connections' => [
 
-        'mysql' => [
+'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'laravel'),
+            'database' => database_path('database.sqlite'),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
