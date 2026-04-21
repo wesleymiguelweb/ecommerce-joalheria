@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (config('app.env') === 'production' || env('APP_ENV') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
 // DESATIVADO PARA RENDER (sem MySQL): Compartilhar variável global para verificar se há múltiplas cores
         // $distinctColors = \App\Models\Product::select('color')
         //     ->distinct()
