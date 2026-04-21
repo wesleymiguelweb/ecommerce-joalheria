@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => 'mysql', // FORÇADO: Sempre usar MySQL em produção
+    'default' => 'sqlite', // FORÇADO: Sempre usar MySQL em produção
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     'connections' => [
 
         'mysql' => [
-            'driver' => 'mysql',
+            'driver' => 'sqlite',
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
