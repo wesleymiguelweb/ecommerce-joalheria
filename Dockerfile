@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 # Instalar extensões necessárias
 RUN apt-get update && apt-get install -y \
@@ -26,6 +26,8 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 # Adicione esta linha antes do final do seu Dockerfile
-RUN php artisan config:clear && php artisan cache:clear && php artisan view:clear
+# Substitua a linha 29 por estas duas:
+RUN composer dump-autoload --optimize
+RUN rm -rf bootstrap/cache/*.php
 
 EXPOSE 80
