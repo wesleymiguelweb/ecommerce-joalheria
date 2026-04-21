@@ -26,27 +26,72 @@ class ProductController extends Controller
         }
 
         // Buscar marcas únicas dos produtos
-        $brands = Product::whereNotNull('brand')
-            ->distinct()
-            ->pluck('brand')
-            ->filter()
-            ->values()
-            ->toArray();
+        $brands = ['Joalheria Luxo', 'Silver King', 'Elegance'];
 
         return view('index', compact('products', 'reviews', 'brands'));
     }
 
     public function feminino()
     {
-        // Buscar produtos iniciais para renderização (será substituído por API)
-        $products = Product::where('category', 'feminino')->limit(12)->get();
+        $demoProducts = collect([
+            (object)[
+                'id' => 4,
+                'name' => 'Colar Prata Feminino',
+                'description' => 'Colar delicado em prata com pingente.',
+                'price' => 320.00,
+                'stock' => 15,
+                'min_stock' => 5,
+                'image' => '/img/Feminino/Colares Femininos/colar1.jpg',
+                'category' => 'feminino',
+                'brand' => 'Elegance',
+                'color' => 'prata'
+            ],
+            (object)[
+                'id' => 5,
+                'name' => 'Bracelete Ouro',
+                'description' => 'Bracelete largo em ouro 18k.',
+                'price' => 950.00,
+                'stock' => 3,
+                'min_stock' => 2,
+                'image' => '/img/Feminino/Braceletes Femininos/bracelete1.jpg',
+                'category' => 'feminino',
+                'brand' => 'Joalheria Luxo',
+                'color' => 'ouro'
+            ]
+        ]);
+        $products = $demoProducts;
         return view('feminino', compact('products'));
     }
 
     public function masculino()
     {
-        // Buscar produtos iniciais para renderização (será substituído por API)
-        $products = Product::where('category', 'masculino')->limit(12)->get();
+        $demoProducts = collect([
+            (object)[
+                'id' => 6,
+                'name' => 'Pulseira Prata Masculina',
+                'description' => 'Pulseira robusta em prata.',
+                'price' => 280.00,
+                'stock' => 10,
+                'min_stock' => 3,
+                'image' => '/img/Masculino/Pulseira Masculina/pulseira1.jpg',
+                'category' => 'masculino',
+                'brand' => 'Silver King',
+                'color' => 'prata'
+            ],
+            (object)[
+                'id' => 7,
+                'name' => 'Relógio Ouro Masculino',
+                'description' => 'Relógio clássico em ouro.',
+                'price' => 1250.00,
+                'stock' => 4,
+                'min_stock' => 2,
+                'image' => '/img/Masculino/Relógios Masculinos/relogio1.jpg',
+                'category' => 'masculino',
+                'brand' => 'Luxo Time',
+                'color' => 'ouro'
+            ]
+        ]);
+        $products = $demoProducts;
         return view('masculino', compact('products'));
     }
 
