@@ -25,5 +25,7 @@ RUN composer install --no-dev --optimize-autoloader
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# Adicione esta linha antes do final do seu Dockerfile
+RUN php artisan config:clear && php artisan cache:clear && php artisan view:clear
 
 EXPOSE 80
