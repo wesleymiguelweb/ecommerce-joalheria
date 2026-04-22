@@ -13,12 +13,12 @@ class ProductController extends Controller
         $demoProducts = [
             (object)[
                 'id' => 1,
-                'name' => 'Aliança Masculina',
-                'description' => 'Aliança elegante com design clássico.',
+                'name' => 'Corrente Masculina',
+                'description' => 'Corrente elegante com design clássico.',
                 'price' => 850.00,
                 'stock' => 5,
                 'min_stock' => 3,
-                'image' => '/img/Masculino/Alianças Masculinas/011170-82fbf90e66aafef47217618346884958-1024-1024.webp',
+                'image' => 'anelCriativo.png',
                 'category' => 'masculino',
                 'brand' => 'Joalheria Luxo',
                 'color' => 'ouro'
@@ -30,7 +30,7 @@ class ProductController extends Controller
                 'price' => 420.00,
                 'stock' => 12,
                 'min_stock' => 5,
-                'image' => '/img/Masculino/Correntes Masculinas/corrente_bolinhas_1_mm_60_cm_19823_1_7a54fbb5479dfc82ec470e9a6df7a016-1024-1024.webp',
+                'image' => 'Masculino/Correntes Masculinas/corrente_bolinhas_1_mm_60_cm_19823_1_7a54fbb5479dfc82ec470e9a6df7a016-1024-1024.webp',
                 'category' => 'masculino',
                 'brand' => 'Silver King',
                 'color' => 'prata'
@@ -42,7 +42,7 @@ class ProductController extends Controller
                 'price' => 1280.00,
                 'stock' => 8,
                 'min_stock' => 2,
-                'image' => '/img/Masculino/Relógios Masculinos/NIM011372_1.jpg',
+                'image' => 'Masculino/Relógios Masculinos/NIM011372_1.jpg',
                 'category' => 'masculino',
                 'brand' => 'Elegance',
                 'color' => 'prata'
@@ -73,7 +73,7 @@ class ProductController extends Controller
                 'price' => 320.00,
                 'stock' => 15,
                 'min_stock' => 5,
-                'image' => '/img/Feminino/Colares Femininos/colar1.jpg',
+                'image' => 'Feminino/Colares Femininos/colar1.jpg',
                 'category' => 'feminino',
                 'brand' => 'Elegance',
                 'color' => 'prata'
@@ -85,7 +85,7 @@ class ProductController extends Controller
                 'price' => 950.00,
                 'stock' => 3,
                 'min_stock' => 2,
-                'image' => '/img/Feminino/Braceletes Femininos/bracelete1.jpg',
+                'image' => 'Feminino/Braceletes Femininos/bracelete1.jpg',
                 'category' => 'feminino',
                 'brand' => 'Joalheria Luxo',
                 'color' => 'ouro'
@@ -105,7 +105,7 @@ class ProductController extends Controller
                 'price' => 280.00,
                 'stock' => 10,
                 'min_stock' => 3,
-                'image' => '/img/Masculino/Pulseira Masculina/pulseira1.jpg',
+                'image' => 'Masculino/Pulseira Masculina/pulseira1.jpg',
                 'category' => 'masculino',
                 'brand' => 'Silver King',
                 'color' => 'prata'
@@ -117,7 +117,7 @@ class ProductController extends Controller
                 'price' => 1250.00,
                 'stock' => 4,
                 'min_stock' => 2,
-                'image' => '/img/Masculino/Relógios Masculinos/relogio1.jpg',
+                'image' => 'Masculino/Relógios Masculinos/relogio1.jpg',
                 'category' => 'masculino',
                 'brand' => 'Luxo Time',
                 'color' => 'ouro'
@@ -129,24 +129,41 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        // Demo product for portfolio detail page
-        $demoProduct = (object)[
-            'id' => $id,
-            'name' => 'Brincos Prata Feminino',
-            'description' => 'Brincos delicados em prata com zircônia. Produto de alta qualidade com design exclusivo.',
-            'price' => 180.00,
-            'stock' => 8,
-            'min_stock' => 2,
-            'image' => '/img/Feminino/Brincos Feminos/brincos1.jpg',
-            'category' => 'feminino',
-            'brand' => 'Elegance',
-            'color' => 'prata',
-            'approvedReviews' => collect([
-                (object)['comment' => 'Perfeitos! Muito delicados.', 'rating' => 5, 'user' => (object)['name' => 'Maria Silva'], 'created_at' => now()],
-                (object)['comment' => 'Qualidade excelente pela prata.', 'rating' => 5, 'user' => (object)['name' => 'Ana Costa'], 'created_at' => now()]
-            ])
-        ];
-        $product = $demoProduct;
+        // Demo products to search from
+        $demoProducts = collect([
+            (object)['id' => 1, 'name' => 'Corrente Masculina', 'description' => 'Corrente elegante com design clássico.', 'price' => 850.00, 'stock' => 5, 'min_stock' => 3, 'image' => 'anelCriativo.png', 'category' => 'masculino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
+            (object)['id' => 2, 'name' => 'Corrente Prata Masculina', 'description' => 'Corrente robusta em prata esterlina.', 'price' => 420.00, 'stock' => 12, 'min_stock' => 5, 'image' => 'Masculino/Correntes Masculinas/corrente_bolinhas_1_mm_60_cm_19823_1_7a54fbb5479dfc82ec470e9a6df7a016-1024-1024.webp', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
+            (object)['id' => 3, 'name' => 'Relógio Masculino', 'description' => 'Relógio clássico e sofisticado.', 'price' => 1280.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'Masculino/Relógios Masculinos/NIM011372_1.jpg', 'category' => 'masculino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 4, 'name' => 'Colar Prata Feminino', 'description' => 'Colar delicado em prata com pingente.', 'price' => 320.00, 'stock' => 15, 'min_stock' => 5, 'image' => 'Feminino/Colares Femininos/colar1.jpg', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 5, 'name' => 'Bracelete Ouro', 'description' => 'Bracelete largo em ouro 18k.', 'price' => 950.00, 'stock' => 3, 'min_stock' => 2, 'image' => 'Feminino/Braceletes Femininos/bracelete1.jpg', 'category' => 'feminino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
+            (object)['id' => 6, 'name' => 'Pulseira Prata Masculina', 'description' => 'Pulseira robusta em prata.', 'price' => 280.00, 'stock' => 10, 'min_stock' => 3, 'image' => 'Masculino/Pulseira Masculina/pulseira1.jpg', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
+            (object)['id' => 7, 'name' => 'Relógio Ouro Masculino', 'description' => 'Relógio clássico em ouro.', 'price' => 1250.00, 'stock' => 4, 'min_stock' => 2, 'image' => 'Masculino/Relógios Masculinos/relogio1.jpg', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro'],
+            (object)['id' => 8, 'name' => 'Anel Prata', 'description' => 'Anel de prata.', 'price' => 250.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'Feminino/Alianças Feminas/anel1.jpg', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'description' => 'Pulseira de Ouro.', 'price' => 450.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'Masculino/Pulseira Masculina/pulseira1.jpg', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro']
+        ]);
+
+        $product = $demoProducts->firstWhere('id', (int)$id);
+
+        if (!$product) {
+            $product = (object)[
+                'id' => $id,
+                'name' => 'Brincos Prata Feminino',
+                'description' => 'Brincos delicados em prata com zircônia. Produto de alta qualidade com design exclusivo.',
+                'price' => 180.00,
+                'stock' => 8,
+                'min_stock' => 2,
+                'image' => 'Feminino/Brincos Feminos/brincos1.jpg',
+                'category' => 'feminino',
+                'brand' => 'Elegance',
+                'color' => 'prata'
+            ];
+        }
+
+        $product->approvedReviews = collect([
+            (object)['comment' => 'Perfeitos! Muito delicados.', 'rating' => 5, 'user' => (object)['name' => 'Maria Silva'], 'created_at' => now()],
+            (object)['comment' => 'Qualidade excelente pela prata.', 'rating' => 5, 'user' => (object)['name' => 'Ana Costa'], 'created_at' => now()]
+        ]);
+
         return view('detalhe-produto', compact('product'));
     }
 
@@ -154,40 +171,14 @@ class ProductController extends Controller
     {
         // Demo search results for portfolio
         $demoProducts = collect([
-            (object)['id' => 8, 'name' => 'Anel Prata', 'price' => 250.00, 'image' => '/img/Feminino/Alianças Feminas/anel1.jpg'],
-            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'price' => 450.00, 'image' => '/img/Masculino/Pulseira Masculina/pulseira1.jpg']
+            (object)['id' => 8, 'name' => 'Anel Prata', 'price' => 250.00, 'image' => 'Feminino/Alianças Feminas/anel1.jpg'],
+            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'price' => 450.00, 'image' => 'Masculino/Pulseira Masculina/pulseira1.jpg']
         ]);
         $products = new \Illuminate\Pagination\LengthAwarePaginator($demoProducts, 20, 9, 1);
         $searchTerm = request('q', 'prata');
         $searchTerm = request('q');
 
-        if ($searchTerm) {
-            $query->where(function($q) use ($searchTerm) {
-                $q->where('name', 'LIKE', "%{$searchTerm}%")
-                  ->orWhere('description', 'LIKE', "%{$searchTerm}%")
-                  ->orWhere('brand', 'LIKE', "%{$searchTerm}%");
-            });
-        }
-
-        // Filtros adicionais
-        if (request('category')) {
-            $query->where('category', request('category'));
-        }
-        if (request('brand')) {
-            $query->where('brand', request('brand'));
-        }
-        if (request('color')) {
-            $query->where('color', request('color'));
-        }
-        if (request('min_price')) {
-            $query->where('price', '>=', request('min_price'));
-        }
-        if (request('max_price')) {
-            $query->where('price', '<=', request('max_price'));
-        }
-
-        $products = $query->paginate(12)->appends(request()->query());
-
+        // Retornar demo view mesmo sem query real
         return view('search_results', compact('products', 'searchTerm'));
     }
 
