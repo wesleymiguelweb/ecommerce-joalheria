@@ -82,6 +82,12 @@
                                 data-product-img="{{ asset('img/' . $product->image) }}">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
+                        <button class="btn btn-primary"
+                                type="button"
+                                onclick="alert('Obrigado por testar o meu portifólio'); return false;"
+                                style="background-color: var(--color-primary); color: var(--color-dark); margin-top: 10px; width: 100%;">
+                            Finalizar a compra
+                        </button>
                     @else
                         <button class="btn btn-dark"
                                 type="button"

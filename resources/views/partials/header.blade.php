@@ -1,7 +1,7 @@
 <header class="container main-header">
     <a href="{{ route('index') }}" class="logo">Elegance Joias</a>
     <nav>
-        <a href="{{ route('index') }}">Página Inicial</a>
+        <a href="{{ route('index') }}">Início</a>
         <a href="{{ route('feminino') }}">Feminino</a>
         <a href="{{ route('masculino') }}">Masculino</a>
         <a href="{{ route('metricas') }}">Métricas</a>

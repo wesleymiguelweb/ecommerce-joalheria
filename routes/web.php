@@ -48,13 +48,13 @@ Route::post('/cart/apply-coupon', [CartController::class, 'applyCoupon'])->name(
 Route::post('/cart/validate-cep', [CartController::class, 'validateCep'])->name('cart.validateCep');
 
 // Rotas protegidas por autenticação
-Route::middleware('auth')->group(function () {
-    Route::get('/checkout', function () {
-        $cart = session()->get('cart', []);
-        $coupon = session()->get('coupon');
-        return view('checkout', compact('cart', 'coupon'));
-    })->name('checkout');
+Route::get('/checkout', function () {
+    $cart = session()->get('cart', []);
+    $coupon = session()->get('coupon');
+    return view('checkout', compact('cart', 'coupon'));
+})->name('checkout');
 
+Route::middleware('auth')->group(function () {
     // Rotas de Pedidos
     Route::get('/pedidos', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/pedidos/{id}', [OrderController::class, 'show'])->name('orders.show');

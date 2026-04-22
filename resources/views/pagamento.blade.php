@@ -1,26 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Pagamento - Joalheria')
 @section('content')
-
-    @if(!auth()->check())
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="{{ route('index') }}">Página Inicial</a>
-                <span>&gt;</span>
-                <span class="current">Pagamento</span>
-            </nav>
-
-            <div style="text-align: center; padding: 60px 20px;">
-                <h1 class="section-title">Faça login para finalizar</h1>
-                <p class="text-secondary" style="font-size: 16px; margin-bottom: 30px;">
-                    Você precisa estar logado para concluir o pagamento.
-                </p>
-                <a href="{{ route('login') }}" class="btn btn-dark">Fazer Login</a>
-                <span class="auth-divider">ou</span>
-                <a href="{{ route('cadastro') }}" class="btn btn-outline">Criar Conta</a>
-            </div>
-        </div>
-    @else
     <div class="container">
         <button class="btn-back" data-history-back style="margin-bottom: 15px;">Voltar</button>
         <nav class="breadcrumb">
@@ -134,12 +114,37 @@
 
                     </div>
 
-                    <button type="button" class="btn btn-dark" id="continue-btn" style="width: 100%; background-color: var(--color-primary); color: var(--color-dark);">Continuar</button>
+                    <button type="button" class="btn btn-dark" id="continue-btn" style="width: 100%; background-color: var(--color-primary); color: var(--color-dark);">Finalizar Compra</button>
                 </form>
 
             </aside>
         </div>
     </div>
+
+    <script>
+    document.getElementById('continue-btn').addEventListener('click', function() {
+        const layoutContainer = document.querySelector('.checkout-layout');
+        
+        // Clear cart from localStorage since we are simulating a successful checkout
+        localStorage.removeItem('cart');
+
+        layoutContainer.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; width: 100%; max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 80px; color: #28a745; margin: 0 auto 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h2 style="color: #28a745; margin-bottom: 15px; font-size: 28px;">Compra Finalizada com Sucesso!</h2>
+                <p style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 30px;">
+                    <strong>Obrigado por testar este portfólio!</strong><br>
+                    Esta é uma aplicação de demonstração, nenhuma cobrança real foi efetuada.
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="{{ route('index') }}" class="btn btn-dark" style="padding: 15px 30px; font-size: 16px;">Voltar à Página Inicial</a>
+                </div>
+            </div>
+        `;
+    });
+    </script>
+
     @include('partials.contact')
-    @endif
 @endsection

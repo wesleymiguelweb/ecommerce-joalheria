@@ -66,6 +66,33 @@
   color: var(--color-dark); /* Muda para cor escura no hover */
 }
 
+@media (max-width: 1024px) {
+  .main-header nav {
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 20px;
+  }
+  .main-header .logo {
+    font-size: 32px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .main-header nav {
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header-icons .search-container .search-input {
+    width: 200px;
+  }
+}
+
 /* Estilo do Bloco de Ícones da Direita */
 .main-header .header-icons {
   display: flex;
