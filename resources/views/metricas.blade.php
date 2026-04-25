@@ -26,7 +26,6 @@
             
             <!-- Exemplo de como colocar as imagens: substitua o "src" pelo caminho correto das suas imagens -->
             <div style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; max-width: 900px; width: 100%;">
-     
                 <img src="{{ asset('img/metricas/metricasAB.png') }}" alt="Métricas Mercado Livre" style="width: 100%; display: block; object-fit: cover;">
                 <div style="padding: 40px; background-color: #f9f9f9; color: #999;">
                     <i>Estratégias em CRO de Teste A/B </i>
@@ -41,7 +40,7 @@
             </div>
 
             <div style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; max-width: 900px; width: 100%;">
-               <img src="{{ asset('img/metricas/metricasABML.png') }}" alt="Métricas Mercado Livre" style="width: 100%; display: block; object-fit: cover;">
+               <img src="{{ asset('img/metricas/MetricasABML.png') }}" alt="Métricas Mercado Livre" style="width: 100%; display: block; object-fit: cover;">
                 <div style="padding: 40px; background-color: #f9f9f9; color: #999;">
                     <i>Melhora da taxa de conversão do mesmo produto</i>
                 </div>
