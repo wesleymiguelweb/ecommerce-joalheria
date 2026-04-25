@@ -529,7 +529,7 @@
             </div>
             <h2 style="margin: 0 0 15px 0; font-size: 1.8rem; color: #222; font-weight: 700;">Muito Obrigado!</h2>
             <p style="color: #555; font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px;">
-                Fico muito feliz que tenha testado meu portfólio!<br><br>A funcionalidade de checkout real exigiria conexão com o banco de dados e autenticação, que foram desativados para facilitar esta demonstração.
+                Fico muito feliz que tenha testado meu portfólio!<br><br>A funcionalidade de checkout real exigiria conexão com o banco de dados e autenticação, que foram desativados para facilitar esta demonstração, para mais informações entre em contato weley.miguel7@outlook.com.
             </p>
             <button onclick="closePortfolioModal()" class="btn btn-dark" style="padding: 14px 20px; font-size: 1.1rem; border-radius: 8px; width: 100%; font-weight: 600; cursor: pointer; border: none; background-color: #333; color: white; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'">
                 Voltar ao Produto

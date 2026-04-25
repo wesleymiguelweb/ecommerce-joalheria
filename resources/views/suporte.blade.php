@@ -18,8 +18,8 @@
 
             <h2 style="margin-top: 40px;">Como Podemos Ajudar?</h2>
             <ul style="font-size: 16px; line-height: 2; color: #666;">
-                <li>📧 <strong>Email:</strong> suporte@elegancejoias.com.br</li>
-                <li>📞 <strong>Telefone:</strong> (11) 3000-0000</li>
+                <li>📧 <strong>Email:</strong> wesley.miguel7@outlook.com</li>
+                <li>📞 <strong>Telefone:</strong> (11) 998102527</li>
                 <li>💬 <strong>Chat:</strong> Disponível de seg. a sex., 9h-18h</li>
             </ul>
 
