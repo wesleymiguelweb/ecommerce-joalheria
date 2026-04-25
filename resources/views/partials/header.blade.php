@@ -1,5 +1,5 @@
 <header class="container main-header">
-    <a href="{{ route('index') }}" class="logo">Elegance Joias</a>
+    <a href="{{ route('index') }}" class="logo">Wesley Joias</a>
     <nav>
         <a href="{{ route('index') }}">Início</a>
         <a href="{{ route('feminino') }}">Feminino</a>

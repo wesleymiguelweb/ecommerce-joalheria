@@ -17,11 +17,6 @@ return new class extends Migration
             ->where('color', 'neutro')
             ->update(['color' => 'prata']);
 
-        // Atualizar todos os produtos com cor 'ouro' para 'prata'
-        DB::table('products')
-            ->where('color', 'ouro')
-            ->update(['color' => 'prata']);
-
         // Atualizar produtos com cor NULL que tenham 'prata' no nome
         DB::table('products')
             ->whereNull('color')

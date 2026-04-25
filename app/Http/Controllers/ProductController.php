@@ -10,16 +10,16 @@ class ProductController extends Controller
     private function getDemoProducts()
     {
         return collect([
-            (object)['id' => 1, 'name' => 'Corrente Masculina', 'description' => 'Corrente elegante com design clássico.', 'price' => 850.00, 'stock' => 5, 'min_stock' => 3, 'image' => 'correnteMasc.png', 'category' => 'masculino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
-            (object)['id' => 2, 'name' => 'Corrente Prata Masculina', 'description' => 'Corrente robusta em prata esterlina.', 'price' => 420.00, 'stock' => 12, 'min_stock' => 5, 'image' => 'correntePRATA.jpg', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
-            (object)['id' => 3, 'name' => 'Relógio Masculino', 'description' => 'Relógio clássico e sofisticado.', 'price' => 1280.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'relogio.png', 'category' => 'masculino', 'brand' => 'Elegance', 'color' => 'prata'],
-            (object)['id' => 4, 'name' => 'Colar Prata Feminino', 'description' => 'Colar delicado em prata com pingente.', 'price' => 320.00, 'stock' => 15, 'min_stock' => 5, 'image' => 'colarPRATA.jpg', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
-            (object)['id' => 5, 'name' => 'Bracelete Ouro', 'description' => 'Bracelete largo em ouro 18k.', 'price' => 950.00, 'stock' => 3, 'min_stock' => 2, 'image' => 'braceleteOuro.png', 'category' => 'feminino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
-            (object)['id' => 6, 'name' => 'Pulseira Prata Masculina', 'description' => 'Pulseira robusta em prata.', 'price' => 280.00, 'stock' => 10, 'min_stock' => 3, 'image' => 'PULSEIRAM.png', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
-            (object)['id' => 7, 'name' => 'Relógio Ouro Masculino', 'description' => 'Relógio clássico em ouro.', 'price' => 1250.00, 'stock' => 4, 'min_stock' => 2, 'image' => 'relogioOuto.png', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro'],
-            (object)['id' => 8, 'name' => 'Anel Prata', 'description' => 'Anel de prata.', 'price' => 250.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'anelPRata.png', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
-            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'description' => 'Pulseira de Ouro.', 'price' => 450.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'pulseiraOuro.jpg', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro'],
-            (object)['id' => 10, 'name' => 'Brincos Prata Feminino', 'description' => 'Brincos delicados em prata com zircônia.', 'price' => 180.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'brincoPrata.png', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata']
+            (object)['id' => 1, 'name' => 'Corrente Masculina', 'description' => 'Corrente elegante com design clássico.', 'price' => 850.00, 'stock' => 5, 'min_stock' => 3, 'image' => 'correnteMasc.webp', 'category' => 'masculino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
+            (object)['id' => 2, 'name' => 'Corrente Prata Masculina', 'description' => 'Corrente robusta em prata esterlina.', 'price' => 420.00, 'stock' => 12, 'min_stock' => 5, 'image' => 'correntePRATA.webp', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
+            (object)['id' => 3, 'name' => 'Relógio Masculino', 'description' => 'Relógio clássico e sofisticado.', 'price' => 1280.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'relogio.webp', 'category' => 'masculino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 4, 'name' => 'Colar Prata Feminino', 'description' => 'Colar delicado em prata com pingente.', 'price' => 320.00, 'stock' => 15, 'min_stock' => 5, 'image' => 'colarPRATA.webp', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 5, 'name' => 'Bracelete Ouro', 'description' => 'Bracelete largo em ouro 18k.', 'price' => 950.00, 'stock' => 3, 'min_stock' => 2, 'image' => 'braceleteOuro.webp', 'category' => 'feminino', 'brand' => 'Joalheria Luxo', 'color' => 'ouro'],
+            (object)['id' => 6, 'name' => 'Pulseira Prata Masculina', 'description' => 'Pulseira robusta em prata.', 'price' => 280.00, 'stock' => 10, 'min_stock' => 3, 'image' => 'PULSEIRAM.webp', 'category' => 'masculino', 'brand' => 'Silver King', 'color' => 'prata'],
+            (object)['id' => 7, 'name' => 'Relógio Ouro Masculino', 'description' => 'Relógio clássico em ouro.', 'price' => 1250.00, 'stock' => 4, 'min_stock' => 2, 'image' => 'relogioOuto.webp', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro'],
+            (object)['id' => 8, 'name' => 'Anel Prata', 'description' => 'Anel de prata.', 'price' => 250.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'anelPRata.webp', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata'],
+            (object)['id' => 9, 'name' => 'Pulseira Ouro', 'description' => 'Pulseira de Ouro.', 'price' => 450.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'pulseiraOuro.webp', 'category' => 'masculino', 'brand' => 'Luxo Time', 'color' => 'ouro'],
+            (object)['id' => 10, 'name' => 'Brincos Prata Feminino', 'description' => 'Brincos delicados em prata com zircônia.', 'price' => 180.00, 'stock' => 8, 'min_stock' => 2, 'image' => 'brincoPrata.webp', 'category' => 'feminino', 'brand' => 'Elegance', 'color' => 'prata']
         ]);
     }
 
@@ -36,7 +36,7 @@ class ProductController extends Controller
         $reviews = collect($demoReviews);
 
         // Buscar marcas únicas dos produtos
-        $brands = ['Joalheria Luxo', 'Silver King', 'Elegance'];
+        $brands = ['Joalheria Luxo', 'A marca que voce quiser eu coloco rs', 'Elegance'];
 
         return view('index', compact('products', 'reviews', 'brands'));
     }
@@ -141,26 +141,32 @@ class ProductController extends Controller
         $sort = request('sort', 'popular');
         switch ($sort) {
             case 'newest':
-                $query->orderBy('created_at', 'desc');
+                $query->orderBy('created_at', 'desc')
+                      ->orderBy('id', 'desc');
                 break;
             case 'price-asc':
                 $query->orderBy('price', 'asc')
-                      ->orderBy('name', 'asc');
+                      ->orderBy('name', 'asc')
+                      ->orderBy('id', 'desc');
                 break;
             case 'price-desc':
                 $query->orderBy('price', 'desc')
-                      ->orderBy('name', 'asc');
+                      ->orderBy('name', 'asc')
+                      ->orderBy('id', 'desc');
                 break;
             case 'name-asc':
-                $query->orderBy('name', 'asc');
+                $query->orderBy('name', 'asc')
+                      ->orderBy('id', 'desc');
                 break;
             case 'name-desc':
-                $query->orderBy('name', 'desc');
+                $query->orderBy('name', 'desc')
+                      ->orderBy('id', 'desc');
                 break;
             case 'popular':
             default:
                 $query->orderBy('stock', 'desc')
-                      ->orderBy('created_at', 'desc');
+                      ->orderBy('created_at', 'desc')
+                      ->orderBy('id', 'desc');
                 break;
         }
 

@@ -301,7 +301,7 @@
     }
 
     /* Modal */
-    .modal-content {
+    .modal-container {
         width: 95%;
         margin: 10% auto;
         padding: var(--space-md);
@@ -353,7 +353,7 @@
 
 /* LANDSCAPE MOBILE */
 @media (max-height: 500px) and (orientation: landscape) {
-    .modal-content {
+    .modal-container {
         margin: 2% auto;
         max-height: 90vh;
         overflow-y: auto;

@@ -341,21 +341,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cartItemsContainer.innerHTML = ''; // Limpa antes de adicionar
             cart.forEach(item => {
-                // Normaliza caminho da imagem: aceita URL absoluta, caminho iniciando com '/', ou apenas nome de arquivo
+                // Normaliza caminho da imagem
                 let imgSrc = item.img || '/img/placeholder.svg';
-                // Normalização do caminho da imagem:
-                // - se começar com '/' ou 'http' usa como está
-                // - se começar com 'img/' adiciona apenas a barra inicial
-                // - caso contrário prefixa com '/img/'
-                if (imgSrc.startsWith('/') || imgSrc.startsWith('http')) {
-                    // usa como está
-                } else if (imgSrc.startsWith('img/')) {
-                    imgSrc = '/' + imgSrc; // '/img/arquivo.png'
+                
+                if (imgSrc.startsWith('http')) {
+                    // Já é uma URL completa
                 } else {
-                    imgSrc = '/img/' + imgSrc;
+                    // Remove barras iniciais e 'img/' duplicado, se houver
+                    let cleanPath = imgSrc.replace(/^\/+/, '').replace(/^img\//, '');
+                    imgSrc = '/img/' + cleanPath;
                 }
 
-                // Codifica espaços para evitar 404 em nomes/pastas com espaço
+                // Codifica espaços
                 imgSrc = imgSrc.replace(/\s/g, '%20');
 
                 // ATENÇÃO: O HTML aqui deve ser IDÊNTICO ao que você usa em 'carrinho.html'
@@ -847,12 +844,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             checkoutItemsContainer.innerHTML = ''; // Limpa
             cart.forEach(item => {
+                // Normaliza caminho da imagem
+                let imgSrc = item.img || '/img/placeholder.svg';
+                
+                if (imgSrc.startsWith('http')) {
+                    // Já é uma URL completa
+                } else {
+                    // Remove barras iniciais e 'img/' duplicado, se houver
+                    let cleanPath = imgSrc.replace(/^\/+/, '').replace(/^img\//, '');
+                    imgSrc = '/img/' + cleanPath;
+                }
+
+                // Codifica espaços
+                imgSrc = imgSrc.replace(/\s/g, '%20');
+
                 // ATENÇÃO: O HTML aqui deve ser IDÊNTICO ao do resumo em 'pagamento.html'
                 const itemHTML = `
                 <div class="cart-item" data-price="${item.price}" data-id="${item.id}">
                     <div class="cart-item-info">
                         <div class="cart-item-img">
-                            <img src="${item.img}" alt="${item.name}">
+                            <img src="${imgSrc}" alt="${item.name}" onerror="this.src='/img/placeholder.svg'">
                         </div>
                         <div class="cart-item-details">
                             <h4>${item.name}</h4>

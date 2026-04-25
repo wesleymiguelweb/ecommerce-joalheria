@@ -4,7 +4,7 @@
 
 @section('content')
         <section class="banner">
-            <img src="{{ asset('img/banner.png') }}" alt="Banner de Noivados">
+            <img src="{{ asset('img/banner.webp') }}" alt="Banner de Noivados">
         </section>
 
         <section class="brands-bar">
@@ -28,7 +28,7 @@
         <section class="container">
             <h2 class="section-title">Novidades</h2>
             <div class="product-grid" id="product-grid-container" data-inline-load-more="true">
-                @forelse($products->take(8) as $product)
+                @forelse($products->take(4) as $product)
                     <div class="product-card" data-productid="{{ $product->id }}">
                         <a href="{{ route('produto', ['id' => $product->id]) }}" style="text-decoration: none; color: inherit;">
                             <img src="{{ asset('img/' . $product->image) }}"

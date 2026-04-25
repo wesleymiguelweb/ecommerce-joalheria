@@ -67,7 +67,7 @@
                 <p class="description">
                     {{ $product->description ?? 'Descrição não disponível para este produto.' }}
                 </p>
-                <div class="controls">
+                <div class="controls" style="flex-wrap: wrap;">
                     <div class="quantity-selector">
                         <button class="qty-btn qty-minus" type="button">-</button>
                         <span class="quantity-value">1</span>
@@ -79,13 +79,16 @@
                                 data-product-id="{{ $product->id }}"
                                 data-product-name="{{ $product->name }}"
                                 data-product-price="{{ $product->price }}"
-                                data-product-img="{{ asset('img/' . $product->image) }}">
+                                data-product-img="{{ asset('img/' . $product->image) }}"
+                                style="flex: 1;">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="btn btn-primary"
                                 type="button"
-                                onclick="alert('Obrigado por testar o meu portifólio'); return false;"
-                                style="background-color: var(--color-primary); color: var(--color-dark); margin-top: 10px; width: 100%;">
+                                onclick="openPortfolioModal(); return false;"
+                                style="background-color: var(--color-primary); color: var(--color-dark); margin-top: 10px; width: 100%; border-radius: 5px; font-weight: bold; padding: 12px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+                                onmouseover="this.style.transform='translateY(-2px)'"
+                                onmouseout="this.style.transform='translateY(0)'">
                             Finalizar a compra
                         </button>
                     @else
@@ -517,6 +520,44 @@
         color: #666;
     }
     </style>
+
+    <!-- Modal de Agradecimento Portfólio -->
+    <div id="portfolio-thanks-modal" class="modal-overlay" style="display: none; z-index: 10000; backdrop-filter: blur(8px); background: rgba(0,0,0,0.6);">
+        <div class="modal-container" style="max-width: 420px; background: white; border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transform: scale(0.8); opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <div style="font-size: 4rem; color: #c9a55c; margin-bottom: 20px;">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h2 style="margin: 0 0 15px 0; font-size: 1.8rem; color: #222; font-weight: 700;">Muito Obrigado!</h2>
+            <p style="color: #555; font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px;">
+                Fico muito feliz que tenha testado meu portfólio!<br><br>A funcionalidade de checkout real exigiria conexão com o banco de dados e autenticação, que foram desativados para facilitar esta demonstração.
+            </p>
+            <button onclick="closePortfolioModal()" class="btn btn-dark" style="padding: 14px 20px; font-size: 1.1rem; border-radius: 8px; width: 100%; font-weight: 600; cursor: pointer; border: none; background-color: #333; color: white; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'">
+                Voltar ao Produto
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openPortfolioModal() {
+            const modal = document.getElementById('portfolio-thanks-modal');
+            const container = modal.querySelector('.modal-container');
+            modal.style.display = 'flex';
+            // Force reflow
+            void modal.offsetWidth;
+            container.style.transform = 'scale(1)';
+            container.style.opacity = '1';
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolio-thanks-modal');
+            const container = modal.querySelector('.modal-container');
+            container.style.transform = 'scale(0.8)';
+            container.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    </script>
 
 @include('partials.contact')
 @endsection

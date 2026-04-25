@@ -92,19 +92,14 @@
                                 @php
                                     $img = $item['image'] ?? '';
                                     if (!$img) {
-                                        $src = '/img/placeholder.svg';
-                                    } elseif (strpos($img, '/') === 0 || strpos($img, 'http') === 0) {
+                                        $src = asset('img/placeholder.svg');
+                                    } elseif (strpos($img, 'http') === 0) {
                                         $src = $img;
-                                    } elseif (strpos($img, 'img/') === 0) {
-                                        $src = '/' . $img;
                                     } else {
-                                        $src = '/img/' . $img;
+                                        $src = asset('img/' . str_replace('img/', '', ltrim($img, '/')));
                                     }
-
-                                    // Codifica espaços para evitar 404 em imagens com nome/pasta contendo espaços
-                                    $src = str_replace(' ', '%20', $src);
                                 @endphp
-                                <img src="{{ $src }}" alt="{{ $item['name'] }}" onerror="this.src='/img/placeholder.svg'">
+                                <img src="{{ $src }}" alt="{{ $item['name'] }}" onerror="this.src='{{ asset('img/placeholder.svg') }}'">
                             </div>
                             <div class="cart-item-details">
                                 <h4>{{ $item['name'] }}</h4>
