@@ -41,7 +41,7 @@
 /* Estilo do Logo */
 .main-header .logo {
   font-family: var(--font-logo); /* Fonte específica para o logo */
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 900px;
   color: var(--color-dark);
   text-decoration: none; /* Garante que não haja sublinhado */
